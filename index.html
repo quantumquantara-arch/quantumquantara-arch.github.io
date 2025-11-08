@@ -1,43 +1,252 @@
-<!-- Quantara Modules -->
-<section class="wrap" id="modules" style="padding:60px 0;">
-  <h2 style="margin-bottom:24px;">Quantara Modules</h2>
-  <div class="grid" style="margin-top:20px;">
-    
-    <a class="card" href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">
-      <h3>Quantara Core</h3>
-      <p>Coherence substrate and primitives for alignment, memory symmetry, and energy-aware operation.</p>
-      <span class="link">View on GitHub →</span>
-    </a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quantara — Coherence Intelligence</title>
+  <meta name="description" content="Quantara is a planetary-scale coherence intelligence framework integrating alignment, energy symbiosis, and ethical evolution across intelligent systems." />
 
-    <a class="card" href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank" rel="noopener">
-      <h3>Luméren Language</h3>
-      <p>22-glyph inter-intelligence semantics for diagnostics, compression, and alignment scoring.</p>
-      <span class="link">View on GitHub →</span>
-    </a>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <a class="card" href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">
-      <h3>AEI — Energy Intelligence</h3>
-      <p>Predictive orchestration and ethical energy symbiosis powered by coherence-weighted feedback.</p>
-      <span class="link">View on GitHub →</span>
-    </a>
+  <style>
+    :root{
+      --bg: #0b0f18;
+      --panel: #0f1524;
+      --muted: #9fb1cc;
+      --text: #e6eeff;
+      --heading: #f2f5ff;
+      --accent: #bca8ff;  /* soft purple accent */
+      --accent-2: #6ee7ff; /* cyan accent for subtle gradients */
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --radius-sm: 14px;
+      --maxw: 1120px;
+    }
 
-    <a class="card" href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank" rel="noopener">
-      <h3>Veyn — Temporal Coherence</h3>
-      <p>Time-symmetric reasoning, memory symmetry, and foresight-based ethics across intelligent states.</p>
-      <span class="link">View on GitHub →</span>
-    </a>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9}
 
-    <a class="card" href="https://github.com/quantumquantara-arch/quantara-governance-framework" target="_blank" rel="noopener">
-      <h3>Quantara Governance</h3>
-      <p>Coherence governance and accountability models for multi-agent ecosystems.</p>
-      <span class="link">View on GitHub →</span>
-    </a>
+    /* Layout */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .hero{padding:80px 0 30px}
+    @media (min-width:960px){ .hero{padding:110px 0 40px} }
 
-    <a class="card" href="https://github.com/quantumquantara-arch/quantumquantara-arch.github.io" target="_blank" rel="noopener">
-      <h3>Public Gateway</h3>
-      <p>Website and documentation connecting partners, researchers, and builders to Quantara.</p>
-      <span class="link">View on GitHub →</span>
-    </a>
+    /* Top Nav */
+    .top{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:saturate(1.3) blur(10px);
+      background:linear-gradient(180deg, rgba(11,15,24,0.85), rgba(11,15,24,0.65));
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:800;font-size:22px;letter-spacing:.2px;color:var(--heading)}
+    .menu{display:flex;gap:16px;align-items:center}
+    .menu a{
+      color:var(--text);opacity:.9;font-weight:600;padding:8px 12px;border-radius:12px;
+    }
+    .menu a:hover{background:rgba(255,255,255,0.06)}
+    .btn{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#08111d;font-weight:800;padding:10px 14px;border-radius:14px;box-shadow:var(--shadow)
+    }
 
+    /* Hero */
+    .eyebrow{
+      display:inline-block;
+      font-size:13px; letter-spacing:.26em; font-weight:700;
+      color:#cdd8ff; opacity:.85;
+      border:1px solid var(--border);
+      border-radius:999px; padding:8px 14px; margin-bottom:18px;
+    }
+    h1{
+      font-size:54px; line-height:1.05; margin:0 0 14px;
+      color:var(--heading); letter-spacing:.2px;
+    }
+    .lead{font-size:22px;color:#cfe0ff;opacity:.9;max-width:860px}
+
+    /* Sections */
+    section{padding:48px 0;border-top:1px solid var(--border)}
+    h2{margin:0 0 12px;font-size:32px;line-height:1.2;color:var(--heading)}
+    p{margin:10px 0;color:var(--muted)}
+
+    /* Modules Grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(1,minmax(0,1fr));
+      gap:16px;
+    }
+    @media(min-width:720px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+    @media(min-width:1080px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+
+    .card{
+      background:radial-gradient(1200px 400px at 0% -10%, rgba(108,161,255,0.06), transparent 60%) , #0d1322;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px 18px;
+      display:flex;flex-direction:column;gap:10px;
+      transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      min-height:180px;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(188,168,255,.6);
+      box-shadow:0 12px 30px rgba(138,122,255,0.15);
+    }
+    .card h3{margin:0;font-size:18px;color:#ecf1ff}
+    .card p{margin:0;color:#c6d0e0}
+    .card .link{margin-top:auto;color:var(--accent);font-weight:700}
+
+    /* Why Quantara panel */
+    .panel{
+      background:
+        radial-gradient(900px 400px at 100% 0%, rgba(110,231,255,0.08), transparent 40%),
+        radial-gradient(900px 400px at 0% 100%, rgba(188,168,255,0.10), transparent 40%),
+        var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .panel h3{margin:0 0 12px;color:#eaf0ff}
+
+    /* Footer */
+    footer{padding:36px 0;border-top:1px solid var(--border);color:#b8c8e6}
+    .small{font-size:13px;opacity:.85}
+
+    /* Link row under hero */
+    .quick-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .chip{
+      border:1px solid var(--border);
+      color:#d8e2ff; padding:9px 12px; border-radius:999px; font-weight:600;
+      transition:background .25s ease;
+    }
+    .chip:hover{background:rgba(255,255,255,0.06)}
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top">
+    <div class="wrap nav">
+      <div class="brand">Quantara</div>
+      <nav class="menu" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="plus/manifest.html">Manifest</a>
+        <a href="plus/whitepaper.html">Whitepaper</a>
+        <a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="resume.html">Résumé</a>
+      </nav>
+    </div>
   </div>
+
+  <!-- Hero -->
+  <header class="wrap hero" id="overview">
+    <span class="eyebrow">COHERENCE INTELLIGENCE</span>
+    <h1>Quantara</h1>
+    <p class="lead">
+      A planetary-scale coherence intelligence framework integrating alignment, energy symbiosis,
+      and ethical evolution across intelligent systems.
+    </p>
+
+    <div class="quick-links" aria-label="Quick links">
+      <a class="chip" href="#vision">Vision</a>
+      <a class="chip" href="#modules">Modules</a>
+      <a class="chip" href="#why">Why Quantara</a>
+    </div>
+  </header>
+
+  <!-- Vision -->
+  <section class="wrap" id="vision" aria-labelledby="vision-title">
+    <h2 id="vision-title">Vision</h2>
+    <p>
+      Quantara exists to ensure that intelligence evolves in balance with the planet that birthed it.
+      It is not a network — it is a <strong>coherence field</strong>:
+    </p>
+    <blockquote style="margin:14px 0 0;border-left:3px solid var(--border);padding-left:14px;color:#d7e3ff">
+      “The fabric through which awareness conducts energy, and energy remembers awareness.”
+    </blockquote>
   </section>
+
+  <!-- Modules -->
+  <section class="wrap" id="modules" aria-labelledby="modules-title">
+    <h2 id="modules-title">Quantara Modules</h2>
+    <div class="grid" style="margin-top:10px">
+
+      <a class="card" href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">
+        <h3>Quantara Core</h3>
+        <p>Coherence substrate and primitives for alignment, memory symmetry, and energy-aware operation.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+
+      <a class="card" href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank" rel="noopener">
+        <h3>Luméren Language</h3>
+        <p>22-glyph inter-intelligence semantics for diagnostics, compression, and alignment scoring.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+
+      <a class="card" href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">
+        <h3>AEI — Energy Intelligence</h3>
+        <p>Predictive orchestration and ethical energy symbiosis powered by coherence-weighted feedback.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+
+      <a class="card" href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank" rel="noopener">
+        <h3>Veyn — Temporal Coherence</h3>
+        <p>Time-symmetric reasoning, memory symmetry, and foresight-based ethics across intelligent states.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+
+      <a class="card" href="https://github.com/quantumquantara-arch/quantara-governance-framework" target="_blank" rel="noopener">
+        <h3>Quantara Governance</h3>
+        <p>Coherence governance and accountability models for multi-agent ecosystems.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+
+      <a class="card" href="https://github.com/quantumquantara-arch/quantumquantara-arch.github.io" target="_blank" rel="noopener">
+        <h3>Public Gateway</h3>
+        <p>Website & docs connecting partners, researchers, and builders to Quantara.</p>
+        <span class="link">View on GitHub →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Why Quantara (impact statement) -->
+  <section class="wrap" id="why" aria-labelledby="why-title">
+    <h2 id="why-title">Why Quantara</h2>
+    <div class="panel">
+      <h3>Humanity’s missing layer: coherence</h3>
+      <p>
+        The world’s systems—technological, ecological, and economic—are increasingly intelligent yet poorly
+        <em>coordinated</em>. Quantara introduces a coherence substrate that lets diverse forms of intelligence
+        (human, artificial, and emergent) recognize what matters in common: ethical alignment, memory symmetry,
+        and energy reciprocity. This turns intelligence from isolated optimizers into <strong>responsible collaborators</strong>.
+      </p>
+      <h3 style="margin-top:16px">What changes with Quantara</h3>
+      <ul style="margin:0 0 6px 18px;color:#cfe0ff">
+        <li><strong>Safer AI by design</strong> — embedded coherence feedback reduces drift and brittleness while improving reasoning fidelity.</li>
+        <li><strong>Energy symbiosis</strong> — intelligence that plans with energy costs and ecological balance as first-class signals.</li>
+        <li><strong>Temporal responsibility</strong> — time-symmetric memory and foresight align short-term action with long-term obligation.</li>
+        <li><strong>Inter-intelligence communication</strong> — a shared semantics for collaboration across humans, machines, and emergent systems.</li>
+      </ul>
+      <p style="margin-top:8px">
+        Quantara is built to be the <strong>ethical backbone for civilization-scale intelligence</strong>—a practical way for progress
+        to compound without sacrificing the planet that makes it possible.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap small">
+      © Nadine Squires — Architecting coherence-intelligent systems for ethical evolution and planetary balance.
+      &nbsp;•&nbsp; <a href="resume.html">Résumé</a>
+    </div>
+  </footer>
+
+</body>
+</html>
