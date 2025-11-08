@@ -1,0 +1,20 @@
+title: Quantara
+description: Planetary Financial Intelligence Architecture
+theme: minima
+markdown: kramdown
+
+# Navigation links (these show up automatically if you use the minima theme)
+nav:
+  - name: Home
+    link: /
+  - name: Investor Portal
+    link: /investor
+  - name: Resume
+    link: /resume
+  - name: Contact
+    link: mailto:quantumquantara@gmail.com
+
+# Optional extras for GitHub Pages
+github:
+  is_project_page: true
+  repository_url: https://github.com/quantumquantara-arch
