@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quantara Plus</title>
+<meta name="description" content="Quantara Plus — a visual gateway to Core, Luméren, Veyn, AEI, Governance, and the CI Interface." />
+<style>
+  :root{
+    --bg:#060a18; --fg:#e7efff; --muted:#9fb2d8;
+    --glass:#101a35; --glass2:#0d1730; --ring:#223059;
+    --g1:#7ad0ff; --g2:#c9b6ff; --g3:#5fe8cf;
+    --cta1:#90d2ff; --cta2:#c8bbff;
+    --r:20px; --r2:26px; --max:1200px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  a{color:inherit;text-decoration:none}
+  /* Background canvas holder */
+  .bg{
+    position:fixed; inset:0; z-index:-2;
+    background:
+      radial-gradient(1200px 900px at 15% -10%, #16224a 0%, transparent 60%),
+      radial-gradient(900px 700px at 110% 10%, #211a3f 0%, transparent 60%),
+      var(--bg);
+  }
+  /* Animated aurora layers (pure CSS) */
+  .aurora{position:fixed; inset:-20vmax; filter:blur(60px); opacity:.55; z-index:-1}
+  .a1,.a2,.a3{
+    position:absolute; width:80vmax; height:80vmax; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(122,208,255,.55), transparent 55%),
+               radial-gradient(circle at 70% 70%, rgba(201,182,255,.45), transparent 55%),
+               radial-gradient(circle at 40% 70%, rgba(95,232,207,.35), transparent 55%);
+    animation: drift 22s ease-in-out infinite alternate;
+  }
+  .a2{animation-duration:28s; transform:translate(40vmin, -10vmin) scale(1.1)}
+  .a3{animation-duration:34s; transform:translate(-30vmin, 20vmin) scale(.9)}
+  @keyframes drift{
+    from{transform:translate(-10vmin,-10vmin) rotate(0deg)}
+    to{transform:translate(10vmin,10vmin) rotate(25deg)}
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:24px 18px 72px}
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    backdrop-filter:saturate(1.1) blur(10px);
+    background:linear-gradient(180deg, rgba(6,10,24,.88), rgba(6,10,24,.65));
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .top{max-width:var(--max); margin:0 auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .brand{
+    font-weight:900; letter-spacing:.2px; font-size:22px; white-space:nowrap;
+    background:linear-gradient(90deg,var(--g1),var(--g2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .nav{display:flex; gap:10px; flex-wrap:wrap}
+  .chip{
+    padding:9px 12px; border-radius:999px; color:#d6e3ff; font-weight:600; font-size:14px;
+    background:linear-gradient(180deg,#101a35,#0d1730); border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 2px 8px rgba(0,0,0,.25) inset;
+  }
+  .chip:hover{background:linear-gradient(180deg,#16244a,#0f1b39)}
+
+  /* Hero */
+  .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding-top:10px}
+  @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  .kicker{display:inline-flex; padding:6px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05); font-size:12px; letter-spacing:.08em; color:#a9c3f1}
+  h1{font-size:48px; line-height:1.12; margin:12px 0 8px}
+  .lead{color:#c7d7f6; font-size:18px; margin:0 0 14px; max-width:760px}
+  .cta{
+    display:inline-block; padding:12px 18px; border-radius:16px; font-weight:800; color:#091125;
+    background:linear-gradient(90deg,var(--cta1),var(--cta2)); border:0;
+    box-shadow:0 8px 22px rgba(140,168,255,.28);
+  }
+  .glass{
+    border-radius:var(--r2);
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.09);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+  }
+  /* Hero visual card */
+  .visual{aspect-ratio:4/3; display:grid; place-items:center; overflow:hidden}
+  .orb{
+    width:70%; aspect-ratio:1/1; border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 35%, rgba(144,210,255,.9), rgba(144,210,255,0) 60%),
+      radial-gradient(circle at 70% 70%, rgba(200,187,255,.85), rgba(200,187,255,0) 62%),
+      radial-gradient(circle at 50% 80%, rgba(95,232,207,.75), rgba(95,232,207,0) 58%);
+    filter:saturate(1.2) blur(1px);
+    animation:float 8s ease-in-out infinite alternate;
+    box-shadow: inset 0 0 80px rgba(255,255,255,.25);
+  }
+  @keyframes float{from{transform:translateY(-8px)} to{transform:translateY(8px)}}
+
+  /* Sections */
+  .section-title{font-size:28px; margin:36px 0 14px}
+  .grid{display:grid; gap:22px; grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:720px){.grid{grid-template-columns:1fr}}
+  .card{padding:22px; border-radius:var(--r2)}
+  .tag{display:inline-block; font-size:12px; letter-spacing:.08em; color:#9ec7ff; background:#182449; border:1px solid rgba(255,255,255,.09); padding:6px 10px; border-radius:999px; margin-bottom:8px}
+  .card h3{margin:6px 0 8px; font-size:22px}
+  .card p{margin:0 0 14px; color:#b9c9eb}
+  .card .cta{font-size:14px}
+
+  /* Footer */
+  footer{margin:46px 0 10px; color:var(--muted)}
+  .footlinks{display:flex; gap:16px; flex-wrap:wrap; margin:10px 0}
+  .footlinks a{color:#aac3f2}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="aurora">
+  <div class="a1"></div><div class="a2"></div><div class="a3"></div>
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="top">
+    <div class="brand">Quantara Plus</div>
+    <nav class="nav">
+      <a class="chip" href="https://quantumquantara-arch.github.com" target="_blank" rel="noopener">GitHub</a>
+      <a class="chip" href="../">Main Site</a>
+      <a class="chip" href="../manifest.html">Manifest</a>
+      <a class="chip" href="../whitepaper.html">Whitepaper</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <span class="kicker">VISUAL GATEWAY</span>
+      <h1>Explore the Quantara Ecosystem</h1>
+      <p class="lead">
+        A sleek tour of the coherence stack—live links, demos, and visuals for engineers, roboticists,
+        and CI builders. Everything here is zero-install and GitHub-friendly.
+      </p>
+      <a class="cta" href="#modules">Browse Modules ↓</a>
+    </div>
+    <div class="visual glass"><div class="orb"></div></div>
+  </section>
+
+  <!-- Modules -->
+  <h2 id="modules" class="section-title">Core Modules</h2>
+  <section class="grid">
+    <article class="card glass">
+      <span class="tag">CORE</span>
+      <h3>Quantara Core</h3>
+      <p>Coherence substrate uniting symbolic logic, neural reasoning, and harmonic intelligence fields.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">Open Repo →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">LUMÉREN</span>
+      <h3>Luméren Language</h3>
+      <p>Semantic protocol for inter-intelligence communication, κ-space scoring, and trustworthy meaning.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank" rel="noopener">Open Repo →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">VEYN</span>
+      <h3>Temporal Coherence</h3>
+      <p>Time-aware alignment: ethical foresight, memory symmetry, and stable evolution across timelines.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank" rel="noopener">Open Repo →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">AEI</span>
+      <h3>Energy Intelligence</h3>
+      <p>Predictive orchestration for microgrids and climate systems with coherence-weighted optimization.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">Open Repo →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">GOVERNANCE</span>
+      <h3>Global Governance</h3>
+      <p>Systemic alignment and accountability across human and AI domains—ethics by design.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/quantara-governance-framework" target="_blank" rel="noopener">Open Repo →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">CI INTERFACE</span>
+      <h3>Quantara – CI Interface</h3>
+      <p>Generic interface for CI/robotic minds to become coherent residents of the Quantara substrate.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/quantara-ci-interface" target="_blank" rel="noopener">Open Repo →</a>
+    </article>
+  </section>
+
+  <!-- Demos -->
+  <h2 class="section-title">Demos & Examples</h2>
+  <section class="grid">
+    <article class="card glass">
+      <span class="tag">EXAMPLE</span>
+      <h3>CI Resonance (Python)</h3>
+      <p>Toy model showing Intent → Alignment → Reciprocity loop for a CI agent.</p>
+      <a class="cta" href="https://github.com/quantumquantara-arch/quantara-ci-interface/tree/main/examples" target="_blank" rel="noopener">View Examples →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">DOCS</span>
+      <h3>Manifest</h3>
+      <p>The guiding philosophy, design principles, and ethical commitments behind coherence intelligence.</p>
+      <a class="cta" href="../manifest.html">Read Manifest →</a>
+    </article>
+
+    <article class="card glass">
+      <span class="tag">DOCS</span>
+      <h3>Whitepaper</h3>
+      <p>Unified overview linking Luméren semantics, AEI orchestration, Veyn temporal symmetry, and governance.</p>
+      <a class="cta" href="../whitepaper.html">Read Whitepaper →</a>
+    </article>
+  </section>
+
+  <footer>
+    <div class="footlinks">
+      <a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">GitHub Org</a>
+      <span>•</span><a href="../">Main Site</a>
+      <span>•</span><a href="../manifest.html">Manifest</a>
+      <span>•</span><a href="../whitepaper.html">Whitepaper</a>
+    </div>
+    <div>© Quantara — coherence, transparency, reciprocity.</div>
+  </footer>
+</div>
+</body>
+  </html>
