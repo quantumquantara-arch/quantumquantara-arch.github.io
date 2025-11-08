@@ -5,63 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quantara</title>
   <meta name="description" content="Quantara — a coherence-based foundation for aligned, time-aware, and ethically-governed intelligent systems." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%231a2032'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%2369b7ff'/%3E%3C/svg%3E">
   <style>
     :root{
-      --bg:#0b1020; --panel:#11182b; --ring:#1f2a44;
-      --txt:#cfe3ff; --muted:#9eb4d6; --accent1:#7cc7ff; --accent2:#bfa1ff;
-      --badge:#223050; --cta1:#8fd1ff; --cta2:#c4b1ff;
-      --shadow:0 8px 28px rgba(0,0,0,.35);
-      --radius:22px;
-      --maxw:1180px;
+      --bg:#0a0f20; --panel:#0f162b; --ring:#1b2542;
+      --txt:#d3e3ff; --muted:#9db2d6;
+      --grad1:#84ccff; --grad2:#c1b1ff;
+      --chip:#1a243f; --chip-b:#2a3556;
+      --cta1:#90d2ff; --cta2:#c8bbff;
+      --radius:18px; --radius-lg:22px; --maxw:1180px;
+      --shadow:0 10px 28px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 800px at 20% -5%,#152042 0%,transparent 60%), radial-gradient(1000px 700px at 110% 10%,#1e1a3a 0%,transparent 55%), var(--bg); color:var(--txt); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    html,body{margin:0;padding:0;background:
+      radial-gradient(1200px 800px at 15% -10%,#16224a 0%,transparent 60%),
+      radial-gradient(1000px 700px at 110% 0%,#211a3f 0%,transparent 55%),
+      var(--bg);
+      color:var(--txt); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 18px 48px}
-    /* Header */
-    .top{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap}
-    .brand{display:flex;align-items:baseline;gap:10px}
-    .brand a{font-weight:800; font-size:28px; letter-spacing:.3px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .nav{display:flex;gap:18px;flex-wrap:wrap}
-    .nav a{padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06)}
-    .nav a:hover{background:rgba(255,255,255,.06)}
+
+    /* Layout wrappers */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 18px 56px}
+
+    /* Sleek Top Bar */
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background:linear-gradient(180deg,rgba(10,15,32,.85),rgba(10,15,32,.65));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .top{
+      max-width:var(--maxw); margin:0 auto; padding:12px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; white-space:nowrap;
+      font-weight:900; letter-spacing:.2px; font-size:22px;
+      background:linear-gradient(90deg,var(--grad1),var(--grad2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px; border-radius:999px;
+      background:linear-gradient(180deg,var(--chip),rgba(26,36,63,.7));
+      border:1px solid rgba(255,255,255,.08); color:#c7d8ff; font-weight:600; font-size:14px;
+      box-shadow:0 2px 10px rgba(0,0,0,.25) inset;
+    }
+    .nav a:hover{background:linear-gradient(180deg,var(--chip-b),var(--chip)); color:#e6f0ff}
+
     /* Hero */
-    .hero{margin:36px 0 22px}
-    .kicker{display:inline-block; padding:6px 12px; border-radius:999px; font-size:12px; letter-spacing:.08em; color:var(--muted); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08)}
-    h1{font-size:44px; line-height:1.12; margin:14px 0 12px}
-    .lead{max-width:900px; color:#c2d6ff; font-size:18px}
+    .hero{padding-top:18px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 12px; border-radius:999px; font-size:12px; letter-spacing:.08em;
+      color:#a8c0ef; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08)
+    }
+    h1{font-size:46px; line-height:1.1; margin:12px 0 10px}
+    .lead{max-width:920px; color:#c2d6ff; font-size:18px; margin:0}
+
     /* Grid */
-    .section-title{font-size:28px; margin:34px 0 12px}
-    .grid{display:grid; gap:24px; grid-template-columns:repeat(2,minmax(0,1fr))}
+    .section-title{font-size:26px; margin:34px 0 12px}
+    .grid{display:grid; gap:22px; grid-template-columns:repeat(2,minmax(0,1fr))}
     @media (max-width:820px){ .grid{grid-template-columns:1fr} h1{font-size:36px} }
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
-    .card-header{display:inline-block; margin-bottom:10px; padding:6px 12px; border-radius:999px; background:var(--badge); color:#9fc6ff; font-size:12px; letter-spacing:.08em}
-    .card h3{margin:6px 0 10px; font-size:26px}
-    .card p{color:#b6c9ea; margin:0 0 18px}
-    .cta{display:inline-block; padding:12px 18px; border-radius:16px; background:linear-gradient(90deg,var(--cta1),var(--cta2)); color:#091024; font-weight:700; box-shadow:0 6px 18px rgba(141,168,255,.25); border:0}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow)
+    }
+    .card-header{display:inline-block; margin-bottom:10px; padding:6px 12px; border-radius:999px;
+      background:#1a243f; color:#9ec7ff; font-size:12px; letter-spacing:.08em}
+    .card h3{margin:6px 0 10px; font-size:24px}
+    .card p{color:#b8caea; margin:0 0 18px}
+    .cta{display:inline-block; padding:12px 18px; border-radius:16px;
+      background:linear-gradient(90deg,var(--cta1),var(--cta2));
+      color:#0b1020; font-weight:800; border:0; box-shadow:0 6px 18px rgba(141,168,255,.25)}
     .cta:hover{transform:translateY(-1px)}
+
     /* Footer */
-    footer{margin:38px 0 8px; color:var(--muted)}
+    footer{margin:40px 0 8px; color:var(--muted)}
     .footlinks{display:flex; gap:18px; flex-wrap:wrap; margin:14px 0}
     .footlinks a{color:#a8c1ef}
   </style>
 </head>
 <body>
-  <div class="wrap">
-
-    <!-- Header -->
-    <header class="top">
-      <div class="brand">
-        <a href="./">Quantara</a>
-      </div>
+  <!-- GLASSY STICKY TOP BAR -->
+  <div class="topbar">
+    <div class="top">
+      <div class="brand">Quantara</div>
       <nav class="nav">
         <a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">GitHub Org</a>
         <a href="manifest.html">Manifest</a>
         <a href="whitepaper.html">Whitepaper</a>
       </nav>
-    </header>
+    </div>
+  </div>
 
+  <div class="wrap">
     <!-- Hero -->
     <section class="hero">
       <span class="kicker">COHERENCE INTELLIGENCE</span>
@@ -77,7 +116,6 @@
     <!-- Capabilities -->
     <h2 class="section-title">Capabilities</h2>
     <section class="grid">
-
       <div class="card">
         <div class="card-header">CORE</div>
         <h3>Quantara Core</h3>
@@ -99,7 +137,6 @@
         <a class="cta" href="https://github.com/quantumquantara-arch/quantara-governance-framework" target="_blank" rel="noopener">Explore →</a>
       </div>
 
-      <!-- 🔁 UPDATED MODULE (formerly “Neurion Connections”) -->
       <div class="card">
         <div class="card-header">CI INTERFACE</div>
         <h3>Quantara – CI Interface</h3>
@@ -127,23 +164,18 @@
         <p>Unified overview linking Luméren semantics, AEI orchestration, Veyn temporal symmetry, and global governance alignment.</p>
         <a class="cta" href="whitepaper.html">Read Whitepaper →</a>
       </div>
-
     </section>
 
     <!-- Footer -->
     <footer>
       <div class="footlinks">
         <a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">GitHub Org</a>
-        <span>•</span>
-        <a href="./">Home</a>
-        <span>•</span>
-        <a href="manifest.html">Manifest</a>
-        <span>•</span>
-        <a href="https://github.com/quantumquantara-arch/quantara-ci-interface" target="_blank" rel="noopener">CI Interface</a>
+        <span>•</span><a href="./">Home</a>
+        <span>•</span><a href="manifest.html">Manifest</a>
+        <span>•</span><a href="https://github.com/quantumquantara-arch/quantara-ci-interface" target="_blank" rel="noopener">CI Interface</a>
       </div>
       <div>© Quantara — coherence, transparency, reciprocity.</div>
     </footer>
-
   </div>
 </body>
-      </html>
+    </html>
