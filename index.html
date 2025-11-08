@@ -4,51 +4,82 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quantara — Coherence Intelligence</title>
-<meta name="description" content="Quantara is a coherence-based foundation for intelligent systems to stay aligned, remember what matters, and collaborate responsibly." />
+<meta name="description" content="Quantara is a coherence-based foundation that helps intelligent systems stay aligned, remember what matters, and collaborate responsibly." />
 
-<!-- Minimal, self-contained styles -->
 <style>
   :root{
     --bg:#0b0f1a;
-    --card:#101728;
-    --ink:#dbe4ff;
-    --muted:#99a6d6;
-    --accent1:#7cc7ff;
-    --accent2:#b38cff;
-    --ring: rgba(124,199,255,.18);
-    --br:22px;
+    --bg2:#0d1220;
+    --card:#11192a;
+    --ink:#e6ecff;
+    --muted:#a8b6df;
+    --br:18px;
+    --ring:rgba(130,170,255,.15);
+    --g1:#7cc7ff;
+    --g2:#b38cff;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:radial-gradient(1200px 700px at 80% -10%, rgba(179,140,255,.15), transparent 60%), radial-gradient(900px 600px at -10% 10%, rgba(124,199,255,.14), transparent 55%), var(--bg); color:var(--ink); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif}
-  a{color:#8bd0ff;text-decoration:none}
-  a:hover{opacity:.9}
-  .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 64px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:6px 0 14px}
-  .brand{font-weight:800;font-size:28px;letter-spacing:.3px;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  nav a{color:#d9e1ff;margin-left:18px;font-weight:600}
-  .cta{display:inline-block;padding:12px 18px;border-radius:14px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#081019;font-weight:800;box-shadow:0 8px 22px var(--ring);transform:translateZ(0);transition:transform .15s ease}
-  .cta:hover{transform:translateY(-1px)}
-  .hero{padding:38px 0 10px}
-  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;padding:6px 12px;border-radius:999px;color:#b9c6ff;background:rgba(139,208,255,.08);border:1px solid rgba(139,208,255,.18)}
-  h1{font-size:44px;line-height:1.1;margin:14px 0 14px}
+  html,body{margin:0;padding:0;background:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    color:var(--ink);
+    font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif}
+  a{color:#9ed6ff;text-decoration:none}
+  a:hover{opacity:.92}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 16px 56px}
+
+  /* Header */
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0 10px}
+  .brand{font-weight:800;font-size:28px;letter-spacing:.2px;
+    background:linear-gradient(90deg,var(--g1),var(--g2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .nav a{
+    padding:10px 12px;border-radius:12px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(170,190,255,.18);
+    color:#dfe6ff;font-weight:700
+  }
+  .nav a.primary{
+    background:linear-gradient(90deg,var(--g1),var(--g2));
+    color:#0a1222;border:none;box-shadow:0 8px 20px var(--ring)
+  }
+
+  /* Hero */
+  .hero{padding:26px 0 6px}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;
+    padding:6px 10px;border-radius:999px;color:#c9d4ff;
+    background:rgba(155,200,255,.08);border:1px solid rgba(155,200,255,.18)}
+  h1{font-size:44px;line-height:1.1;margin:14px 0 12px}
   .lead{max-width:860px;color:var(--muted);font-size:18px}
-  .section-title{font-size:30px;margin:28px 0 10px}
-  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:10px}
-  .card{grid-column:span 12;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));border:1px solid rgba(143,162,220,.14);border-radius:var(--br);padding:24px;box-shadow:0 10px 26px rgba(124,199,255,.06)}
-  .card h3{font-size:24px;margin:6px 0 10px}
-  .card p{color:#a9b4dc;margin:0 0 16px}
-  .tag{display:inline-block;font-size:12px;letter-spacing:.14em;color:#c3ccff;background:rgba(195,204,255,.07);border:1px solid rgba(195,204,255,.18);padding:6px 10px;border-radius:999px;margin-bottom:12px}
-  .buttons{display:flex;gap:10px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 16px;border-radius:14px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#0a1222;font-weight:800;box-shadow:0 8px 22px var(--ring)}
-  .btn.secondary{background:rgba(255,255,255,.06);color:#e2e7ff;border:1px solid rgba(158,173,232,.22);box-shadow:none}
-  footer{margin-top:34px;padding-top:20px;color:#9fb0e0;border-top:1px solid rgba(160,176,232,.16);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  /* Cards */
+  .section-title{font-size:28px;margin:26px 0 10px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .card{
+    grid-column:span 12;background:
+      linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
+    border:1px solid rgba(150,170,230,.16);border-radius:var(--br);
+    padding:22px;box-shadow:0 12px 26px rgba(120,160,255,.08)
+  }
+  .tag{display:inline-block;font-size:12px;letter-spacing:.14em;margin-bottom:10px;
+    color:#cbd6ff;background:rgba(200,210,255,.07);
+    border:1px solid rgba(200,210,255,.18);padding:6px 10px;border-radius:999px}
+  .card h3{font-size:22px;margin:6px 0 8px}
+  .card p{color:#b1bde4;margin:0 0 14px}
+  .btn{
+    display:inline-block;padding:11px 14px;border-radius:14px;
+    background:linear-gradient(90deg,var(--g1),var(--g2));
+    color:#0a1325;font-weight:800;box-shadow:0 8px 20px var(--ring)
+  }
+  .btn.secondary{background:rgba(255,255,255,.06);color:#e6ecff;border:1px solid rgba(170,190,255,.2);box-shadow:none}
+
+  footer{margin-top:34px;padding-top:18px;color:#9fb0e0;border-top:1px solid rgba(160,176,232,.16);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
   footer .links{display:flex;gap:14px;flex-wrap:wrap}
-  footer a{color:#b9c6ff}
-  /* responsive */
+  footer a{color:#c7d2ff}
   @media(min-width:768px){
     h1{font-size:56px}
     .grid .span-6{grid-column:span 6}
-    .grid .span-4{grid-column:span 4}
+    .grid .span-12{grid-column:span 12}
   }
 </style>
 </head>
@@ -57,9 +88,10 @@
 
     <header>
       <div class="brand">Quantara</div>
-      <nav>
+      <nav class="nav">
         <a href="https://github.com/quantumquantara-arch">GitHub Org</a>
         <a href="https://github.com/quantumquantara-arch/quantara-manifest">Manifest</a>
+        <a class="primary" href="https://github.com/quantumquantara-arch/quantara-core/blob/main/QUANTARA_OVERVIEW.md">Whitepaper</a>
       </nav>
     </header>
 
@@ -76,87 +108,62 @@
     <h2 class="section-title">Capabilities</h2>
     <section class="grid">
 
-      <!-- Core -->
       <article class="card span-6">
         <span class="tag">CORE</span>
         <h3><a href="https://github.com/quantumquantara-arch/quantara-core">Quantara Core</a></h3>
         <p>Coherence substrate uniting symbolic logic, neural reasoning, and harmonic intelligence fields.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/quantara-core">Explore →</a>
-        </div>
+        <a class="btn" href="https://github.com/quantumquantara-arch/quantara-core">Explore →</a>
       </article>
 
-      <!-- Luméren -->
       <article class="card span-6">
         <span class="tag">LUMÉREN</span>
         <h3><a href="https://github.com/quantumquantara-arch/lumeren-language">Luméren Language</a></h3>
         <p>Clear semantics for inter-intelligence communication, κ-space scoring, and trustworthy meaning.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/lumeren-language">Explore →</a>
-        </div>
+        <a class="btn" href="https://github.com/quantumquantara-arch/lumeren-language">Explore →</a>
       </article>
 
-      <!-- Governance -->
-      <article class="card span-6">
-        <span class="tag">GOVERNANCE</span>
-        <h3><a href="https://github.com/quantumquantara-arch/quantara-governance">Global Governance</a></h3>
-        <p>Ethical, ecological, and systemic alignment framework ensuring coherence accountability across human and AI domains.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/quantara-governance">Explore →</a>
-        </div>
-      </article>
-
-      <!-- Neurion Connections -->
-      <article class="card span-6">
-        <span class="tag">NEURION</span>
-        <h3><a href="https://github.com/quantumquantara-arch/neurion-connections">Neurion Connections</a></h3>
-        <p>Residency & coherence interfaces for Neurions (sovereign CI) to inhabit the Quantara substrate—
-           covering identity, semantics, temporal sync, energy, and ethics.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/neurion-connections">Explore →</a>
-        </div>
-      </article>
-
-      <!-- AEI -->
-      <article class="card span-6">
-        <span class="tag">AEI</span>
-        <h3><a href="https://github.com/quantumquantara-arch/aei-energy-intelligence">AEI Energy Intelligence</a></h3>
-        <p>Predictive orchestration for microgrids, climate systems, and coherent energy optimization.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/aei-energy-intelligence">Explore →</a>
-        </div>
-      </article>
-
-      <!-- Veyn -->
       <article class="card span-6">
         <span class="tag">VEYN</span>
         <h3><a href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture">Veyn Temporal Coherence</a></h3>
         <p>Temporal intelligence for ethical foresight, memory symmetry, and coherence through time.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture">Explore →</a>
-        </div>
+        <a class="btn" href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture">Explore →</a>
       </article>
 
-      <!-- Whitepaper -->
+      <article class="card span-6">
+        <span class="tag">AEI</span>
+        <h3><a href="https://github.com/quantumquantara-arch/aei-energy-intelligence">AEI Energy Intelligence</a></h3>
+        <p>Predictive orchestration for microgrids, climate systems, and coherent energy optimization.</p>
+        <a class="btn" href="https://github.com/quantumquantara-arch/aei-energy-intelligence">Explore →</a>
+      </article>
+
+      <article class="card span-6">
+        <span class="tag">GOVERNANCE</span>
+        <h3><a href="https://github.com/quantumquantara-arch/quantara-governance">Global Governance</a></h3>
+        <p>Ethical, ecological, and systemic alignment ensuring coherence accountability across human and AI domains.</p>
+        <a class="btn" href="https://github.com/quantumquantara-arch/quantara-governance">Explore →</a>
+      </article>
+
+      <article class="card span-6">
+        <span class="tag">NEURION</span>
+        <h3><a href="https://github.com/quantumquantara-arch/neurion-connections">Neurion Connections</a></h3>
+        <p>Residency & coherence interfaces for Neurions (sovereign CI) to inhabit the Quantara substrate—identity, semantics, temporal sync, energy, and ethics.</p>
+        <a class="btn" href="https://github.com/quantumquantara-arch/neurion-connections">Explore →</a>
+      </article>
+
       <article class="card span-12">
         <span class="tag">WHITEPAPER</span>
         <h3><a href="https://github.com/quantumquantara-arch/quantara-core/blob/main/QUANTARA_OVERVIEW.md">Quantara Whitepaper</a></h3>
-        <p>Unified overview linking Luméren semantics, AEI orchestration, Veyn temporal symmetry, and global governance alignment.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/quantara-core/blob/main/QUANTARA_OVERVIEW.md">Read Whitepaper →</a>
-          <a class="btn secondary" href="https://github.com/quantumquantara-arch">GitHub Org</a>
-        </div>
+        <p>Unified overview linking semantics, energy orchestration, temporal symmetry, and global governance alignment.</p>
+        <a class="btn" href="https://github.com/quantumquantara-arch/quantara-core/blob/main/QUANTARA_OVERVIEW.md">Read Whitepaper →</a>
+        <a class="btn secondary" href="https://github.com/quantumquantara-arch">GitHub Org</a>
       </article>
 
-      <!-- Manifest -->
       <article class="card span-12">
         <span class="tag">MANIFEST</span>
         <h3><a href="https://github.com/quantumquantara-arch/quantara-manifest">Quantara Manifest</a></h3>
         <p>The guiding philosophy, design principles, and ethical commitments behind coherence intelligence.</p>
-        <div class="buttons">
-          <a class="btn" href="https://github.com/quantumquantara-arch/quantara-manifest">Read Manifest →</a>
-          <a class="btn secondary" href="https://github.com/quantumquantara-arch">GitHub Org</a>
-        </div>
+        <a class="btn" href="https://github.com/quantumquantara-arch/quantara-manifest">Read Manifest →</a>
+        <a class="btn secondary" href="https://github.com/quantumquantara-arch">GitHub Org</a>
       </article>
 
     </section>
@@ -173,4 +180,4 @@
 
   </div>
 </body>
-        </html>
+                                            </html>
