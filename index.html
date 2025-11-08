@@ -17,8 +17,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:I
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.75) 60%,transparent);
-  backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid rgba(255,255,255,.04)}
+header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.75) 60%,transparent);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid rgba(255,255,255,.04)}
 .brand{font-size:24px;font-weight:800;letter-spacing:.2px}
 nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 nav a{color:var(--ink);opacity:.86;font-weight:600}
@@ -30,26 +29,28 @@ nav a.cta{
 .hero{display:grid;gap:14px;margin:38px 0 18px}
 h1{font-size:44px;line-height:1.1;margin:0 0 8px}
 .lead{color:var(--muted);font-size:18px}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .pill{display:inline-block;border:1px solid var(--bd);background:#111827a6;color:var(--ink);
-  border-radius:999px;padding:6px 12px;font-size:12px}
+  border-radius:999px;padding:7px 13px;font-size:13px}
 .section{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:22px;margin:18px 0}
 h2{font-size:26px;margin:0 0 12px}
 h3{font-size:20px;margin:18px 0 8px}
 ul{margin:10px 0 0 20px}
-kbd{background:#0f1824;border:1px solid var(--bd);border-radius:6px;padding:2px 6px;font-family:ui-monospace,monospace}
 .table{width:100%;border-collapse:collapse;margin-top:10px}
-.table th,.table td{border:1px solid var(--bd);padding:10px;text-align:left}
+.table th,.table td{border:1px solid var(--bd);padding:12px;text-align:left}
 .table th{background:#0e1520;color:#d9e2ef}
 .btn{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--accent));color:#0c1016;
   padding:12px 16px;border-radius:12px;font-weight:700}
 .small{font-size:13px;color:var(--muted)}
-footer{margin:50px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted)}
+footer{margin:46px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted)}
 .rule{height:1px;background:linear-gradient(90deg,transparent,#1b2a41,transparent);margin:22px 0}
+.card{background:var(--panel);border:1px solid var(--bd);border-radius:16px;padding:22px}
+.grid{display:grid;gap:16px}
+@media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
 </style>
 </head>
-
 <body>
+
 <header>
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px">
     <div class="brand">Quantara</div>
@@ -58,82 +59,103 @@ footer{margin:50px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:spac
       <a href="/manifest">Manifest</a>
       <a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">GitHub</a>
       <a href="/resume">Résumé</a>
-      <!-- NEW: Investor Portal nav item -->
       <a class="cta" href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Investor Portal</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
+  <!-- HERO -->
   <section class="hero" id="overview">
     <h1>Quantara</h1>
     <p class="lead">
       A planetary-scale coherence intelligence framework integrating alignment, energy reciprocity, and ethical evolution across intelligent systems.
     </p>
+    <!-- RESTORED MODULE CHIPS -->
     <div class="pills">
-      <span class="pill">Coherence Intelligence</span>
-      <span class="pill">Energy-Aware Economics (AEI)</span>
-      <span class="pill">Temporal Equity (τ)</span>
-      <span class="pill">Ethical Markets & Governance</span>
+      <a class="pill" href="#coherence-intelligence">Coherence Intelligence</a>
+      <a class="pill" href="#aei">Energy-Aware Economics (AEI)</a>
+      <a class="pill" href="#temporal-equity">Temporal Equity (τ)</a>
+      <a class="pill" href="#ethical-markets">Ethical Markets & Governance</a>
+      <!-- CI CONNECTION LINKS (both common paths kept) -->
+      <a class="pill" href="/plus/">CI Connection</a>
+      <a class="pill" href="/plus/ci-connection.html">CI Connection (direct)</a>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Modules</h2>
+  <div class="grid">
+    <!-- LEFT COLUMN: MODULES + WHY -->
+    <div>
+      <!-- MODULES -->
+      <section class="section" id="modules">
+        <h2>Modules</h2>
+        <ul>
+          <li id="coherence-intelligence"><strong>Coherence Intelligence:</strong> quantifies κ (alignment), τ (time responsibility), and Σ-Drift (risk) to steer behavior.</li>
+          <li id="aei"><strong>AEI — Artificial Energy Intelligence:</strong> pricing aligned with energy, reciprocity, & verified externalities.</li>
+          <li id="temporal-equity"><strong>Temporal Equity (τ):</strong> long-horizon duties built into capital costs & yield.</li>
+          <li id="ethical-markets"><strong>Ethical Markets & Governance:</strong> transparent, self-correcting accountability.</li>
+        </ul>
+      </section>
+
+      <!-- WHY QUANTARA (restored bottom content style) -->
+      <section class="section" id="why">
+        <h2>Why Quantara</h2>
+        <ul>
+          <li><strong>Alignment-native:</strong> value creation tied to verified ecological & social reciprocity.</li>
+          <li><strong>Time-aware:</strong> τ-Score embeds long-horizon duties into capital costs & yield.</li>
+          <li><strong>Drift-resistant:</strong> Σ-Drift breakers slow/stop unethical volatility cascades.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN: INVESTOR HIGHLIGHTS -->
+    <div>
+      <section class="card" id="investor">
+        <h2>Investor Highlights (USD)</h2>
+        <p class="small">Full model lives in the <a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Investor Portal</a> (opens in new tab).</p>
+        <div class="rule"></div>
+        <h3>Unified Projection 2025–2035 (Illustrative)</h3>
+        <table class="table" role="table" aria-label="Quantara revenue projection">
+          <thead><tr><th>Year</th><th>Total Revenue (USD B)</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>2025</td><td>1.9</td><td>Platform + services + licensing</td></tr>
+            <tr><td>2027</td><td>5.5</td><td>Coherence instruments go live</td></tr>
+            <tr><td>2030</td><td>26.4</td><td>AEI pricing widespread</td></tr>
+            <tr><td>2032</td><td>67.6</td><td>Temporal Equity adoption</td></tr>
+            <tr><td>2035</td><td>162.4</td><td>Global coherence benchmarks</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top:16px">Why it compounds</h3>
+        <ul>
+          <li><strong>Energy-aware pricing (AEI):</strong> reciprocity & circularity lower cost, raise integrity.</li>
+          <li><strong>Coherence instruments:</strong> CCE/CRB/TEB unlock capital for high-κ, high-τ operators.</li>
+          <li><strong>Ethical compounding:</strong> transparency + auditability increases cash-flow durability.</li>
+        </ul>
+
+        <p style="margin-top:16px">
+          <a class="btn" href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Open Full Investor Portal</a>
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <!-- RESOURCES / LINKS -->
+  <section class="section" id="resources">
+    <h2>Resources</h2>
     <ul>
-      <li><strong>AEI — Artificial Energy Intelligence:</strong> pricing aligned with energy, reciprocity, & verified externalities.</li>
-      <li><strong>Coherence Capital:</strong> κ-Index (alignment), τ-Score (time responsibility), Σ-Drift (risk).</li>
-      <li><strong>Ethical Markets & Governance:</strong> transparent, self-correcting accountability.</li>
-    </ul>
-  </section>
-
-  <!-- NEW: On-site Investor teaser (keeps “one file” while linking to full portal) -->
-  <section class="section" id="investor">
-    <h2>Investor Highlights (USD)</h2>
-    <p class="small">Full details, revenue model, governance, and data live in the Investor Portal (opens in new tab).</p>
-
-    <div class="rule"></div>
-    <h3>Unified Projection 2025–2035 (Illustrative)</h3>
-    <table class="table">
-      <thead><tr><th>Year</th><th>Total Revenue (USD B)</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>2025</td><td>1.9</td><td>Platform + services + licensing</td></tr>
-        <tr><td>2027</td><td>5.5</td><td>Coherence instruments go live</td></tr>
-        <tr><td>2030</td><td>26.4</td><td>AEI pricing widespread</td></tr>
-        <tr><td>2032</td><td>67.6</td><td>Temporal Equity adoption</td></tr>
-        <tr><td>2035</td><td>162.4</td><td>Global coherence benchmarks</td></tr>
-      </tbody>
-    </table>
-
-    <h3 style="margin-top:16px">Why it compounds</h3>
-    <ul>
-      <li><strong>Energy-aware pricing (AEI):</strong> rewards reciprocity & circularity → lowers cost, raises integrity.</li>
-      <li><strong>Coherence instruments:</strong> CCE/CRB/TEB unlock capital for high-κ, high-τ operators.</li>
-      <li><strong>Ethical compounding:</strong> transparency + auditability increases cash flow durability.</li>
-    </ul>
-
-    <p style="margin-top:16px">
-      <a class="btn" href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">
-        Open Full Investor Portal
-      </a>
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Why Quantara</h2>
-    <ul>
-      <li><strong>Alignment-native:</strong> value creation tied to verified ecological & social reciprocity.</li>
-      <li><strong>Time-aware:</strong> τ-Score embeds long-horizon duties into capital costs & yield.</li>
-      <li><strong>Drift-resistant:</strong> Σ-Drift breakers slow/stop unethical volatility cascades.</li>
+      <li><a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Financial Architecture (GitHub)</a></li>
+      <li><a href="/plus/">CI Connection (module hub)</a></li>
+      <li><a href="/manifest">Manifest</a></li>
+      <li><a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">All Repositories</a></li>
     </ul>
   </section>
 
   <footer>
     <div>© Nadine Squires — Quantara</div>
-    <div class="small">
-      Contact: <a href="mailto:quantumquantara@gmail.com">quantumquantara@gmail.com</a>
-    </div>
+    <div class="small">Contact: <a href="mailto:quantumquantara@gmail.com">quantumquantara@gmail.com</a></div>
   </footer>
 </main>
+
 </body>
-</html>
+  </html>
