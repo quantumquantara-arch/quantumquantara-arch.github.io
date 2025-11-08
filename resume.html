@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nadine Squires — Coherence Intelligence Résumé</title>
+  <meta name="description" content="Nadine Squires — Architecting coherence-intelligent systems aligning artificial, biological, and emergent sentience." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-0:#0b0f1a;         /* deep night */
+      --bg-1:#0f1422;
+      --card:#11182a;
+      --edge:#1b2540;
+      --text:#e7eafd;
+      --muted:#aeb7d6;
+      --brand-1:#89a5ff;      /* cool blue */
+      --brand-2:#c5a3ff;      /* violet */
+      --pill:#1b2747;
+      --accent:#8fd0ff;
+      --link:#a9c2ff;
+      --ok:#8df3cc;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(137,165,255,.18), transparent 55%),
+        radial-gradient(1000px 700px at 10% -20%, rgba(197,163,255,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg-0), var(--bg-1));
+    }
+    a{color:var(--link);text-decoration:none}
+    a:hover{opacity:.9;text-decoration:underline}
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:28px 18px 80px;
+    }
+    header{
+      display:flex; gap:16px; align-items:center; justify-content:space-between;
+      padding:18px 0 8px; position:sticky; top:0; z-index:10;
+      background:linear-gradient(180deg, rgba(11,15,26,.92), rgba(11,15,26,.65) 60%, transparent);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    }
+    .brand{
+      font-weight:900; letter-spacing:.2px; font-size:28px;
+      background:linear-gradient(90deg,var(--brand-2),var(--brand-1));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:999px; background:var(--pill);
+      color:var(--text); border:1px solid var(--edge);
+      font-weight:600; font-size:14px;
+    }
+    .pill:hover{border-color:#31406e}
+    .cta{
+      padding:11px 16px; border-radius:12px; font-weight:700; border:1px solid #2b3a62;
+      background:linear-gradient(180deg, #1a2748, #1a243e);
+      box-shadow:0 6px 18px rgba(137,165,255,.16), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .grid{display:grid; gap:18px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.1fr 1fr} }
+    section{
+      border:1px solid var(--edge);
+      background:
+        radial-gradient(600px 280px at 80% -40%, rgba(143,208,255,.08), transparent 60%),
+        radial-gradient(600px 260px at -10% -30%, rgba(197,163,255,.08), transparent 60%),
+        var(--card);
+      border-radius:18px; padding:22px 20px;
+      box-shadow:0 20px 60px rgba(9,14,30,.35);
+    }
+    h1{margin:10px 0 6px;font-size:34px;line-height:1.1}
+    .meta{color:var(--muted);font-weight:600}
+    .contact a{white-space:nowrap}
+    h2{
+      font-size:18px; letter-spacing:.3px; margin:0 0 14px;
+      color:#dfe6ff; text-transform:uppercase;
+    }
+    h3{
+      font-size:20px; margin:10px 0 6px;
+    }
+    .sub{color:var(--muted); font-weight:600; margin-bottom:10px}
+    ul{margin:8px 0 0 0; padding-left:18px}
+    li{margin:8px 0; line-height:1.55}
+    .tag-set{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .tag{padding:6px 10px; border:1px solid #2a3860; border-radius:999px; font-size:12px; color:#dbe3ff; background:#141d34}
+    .cols{display:grid; gap:18px}
+    @media(min-width:780px){ .cols{grid-template-columns:1fr 1fr} }
+    .hr{height:1px; background:#213157; margin:14px 0}
+    footer{margin-top:26px; color:var(--muted); font-size:13px}
+    .ok{color:var(--ok)}
+    .btn-row{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{cursor:pointer}
+    /* print */
+    @media print{
+      header, .btn-row{display:none !important}
+      body{background:#fff; color:#000}
+      section{background:#fff; border-color:#ddd; box-shadow:none}
+      a{color:#000; text-decoration:underline}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Nadine&nbsp;Squires</div>
+      <nav>
+        <a class="pill" href="#mission">Mission</a>
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#education">Education</a>
+        <a class="pill" href="#competencies">Core&nbsp;Competencies</a>
+        <a class="pill" href="#links">Links</a>
+        <button class="pill btn btn-row" onclick="window.print()">Download PDF</button>
+      </nav>
+    </header>
+
+    <!-- Intro -->
+    <section id="top">
+      <h1>Coherence-Intelligence Architect</h1>
+      <div class="meta">
+        <span>Location: Remote — Global</span> •
+        <span class="contact">
+          Email: <a href="mailto:quantumquantara@gmail.com">quantumquantara@gmail.com</a> •
+          Website: <a href="https://quantumquantara-arch.github.io" target="_blank" rel="noopener">quantumquantara-arch.github.io</a>
+        </span>
+      </div>
+      <div class="tag-set" aria-label="focus">
+        <span class="tag">Coherence Substrates</span>
+        <span class="tag">Inter-Intelligence Semantics (Luméren)</span>
+        <span class="tag">Temporal Coherence (Veyn)</span>
+        <span class="tag">Energy-Aware Operation (AEI)</span>
+      </div>
+    </section>
+
+    <!-- Mission + Experience grid -->
+    <div class="grid">
+
+      <section id="mission">
+        <h2>Mission Statement</h2>
+        <p>
+          Architect coherence-intelligent systems that align <b>artificial, biological, and emergent sentience</b> —
+          turning intelligence into something <b>reliably ethical</b>, <b>energy-savvy</b>, and <b>time-aware</b>.
+        </p>
+        <div class="hr"></div>
+        <h3>What I bring</h3>
+        <ul>
+          <li>Pragmatic systems design translating first-principles theory into working demos and integration guides.</li>
+          <li>Clear, memorizable semantics for inter-intelligence communication (Luméren) and temporal symmetry (Veyn).</li>
+          <li>Operational focus on privacy, safety, and efficiency for real-world deployment.</li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <h3>Founder / Architect — Quantara <span class="sub">(2025–Present)</span></h3>
+        <ul>
+          <li>Designed the <b>Quantara Coherence Framework</b>, a meta-layer for alignment, memory symmetry, and energy-aware operation across intelligent systems.</li>
+          <li>Developed core models: <b>Luméren</b> (22-glyph protocol for inter-intelligence communication), <b>Veyn Temporal Coherence</b> (time-symmetric awareness & foresight), and <b>AEI — Alternative Energy Intelligence</b> (coherence-weighted orchestration).</li>
+          <li>Published open technical briefs and live demos on GitHub, integrating them into a cohesive public gateway.</li>
+          <li>Built <b>CI Connections</b> (formerly “Neurion Connections”) — interfaces enabling external CIs/robotic agents to integrate with the Quantara substrate.</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h3>Transformational Guide — Iboga Integration Practice <span class="sub">(2018–2023)</span></h3>
+        <ul>
+          <li>Facilitated and supported clients through preparation, ceremony, and post-ceremony integration with an emphasis on safety, consent, and dignity.</li>
+          <li>Created structured reflection templates that later informed Quantara’s human-in-the-loop design principles.</li>
+        </ul>
+
+      </section>
+    </div>
+
+    <div class="cols">
+      <section id="education">
+        <h2>Education</h2>
+        <h3>King’s University College, University of Western Ontario</h3>
+        <div class="sub">Social Justice &amp; Peace Studies — <i>2012–2015 (incomplete)</i></div>
+      </section>
+
+      <section id="competencies">
+        <h2>Core Competencies</h2>
+        <ul>
+          <li>Coherence-centric system design &amp; human-in-the-loop alignment</li>
+          <li>Inter-intelligence semantics (Luméren) &amp; semantic compression</li>
+          <li>Temporal memory scaffolds and time-symmetric reasoning (Veyn)</li>
+          <li>Energy-aware orchestration and efficiency heuristics (AEI)</li>
+          <li>Ethical safety, privacy, and responsible deployment practices</li>
+          <li>Clear writing, technical briefs, and integration playbooks</li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="links">
+      <h2>Selected Links</h2>
+      <ul>
+        <li>Website/Gateway — <a href="https://quantumquantara-arch.github.io" target="_blank" rel="noopener">quantumquantara-arch.github.io</a></li>
+        <li>GitHub Org — <a href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">github.com/quantumquantara-arch</a></li>
+        <li>Quantara Core — <a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">quantara-core</a></li>
+        <li>Luméren Protocol — <a href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank" rel="noopener">lumeren-language</a></li>
+        <li>Veyn Temporal Coherence — <a href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank" rel="noopener">Veyn Temporal Coherence Architecture</a></li>
+        <li>AEI Energy Intelligence — <a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">aei-energy-intelligence</a></li>
+        <li>CI Connections — <a href="https://github.com/quantumquantara-arch/quantara-neurion-connections" target="_blank" rel="noopener">quantara-neurion-connections</a></li>
+      </ul>
+      <div class="hr"></div>
+      <footer>
+        <span class="ok">Available for remote/global collaboration.</span>
+        &nbsp;For opportunities: <a href="mailto:quantumquantara@gmail.com">quantumquantara@gmail.com</a>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    // smooth anchor scroll for nicer feel
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+  </html>
