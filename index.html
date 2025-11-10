@@ -6,239 +6,242 @@
 <title>Quantara — Planetary Coherence Intelligence</title>
 <meta name="description" content="Quantara is a planetary-scale coherence intelligence framework enabling humanity, AI, and life to collaborate responsibly and compound progress without harm." />
 <style>
-  :root{
-    --bg:#0b0f14; --panel:#101722; --ink:#e6eef7; --muted:#a7b8cc;
-    --accent1:#7dd3fc; --accent2:#a78bfa; --accent3:#34d399;
-    --ring:#223044; --bd:#223044; --pill:#182030;
-    --shadow:0 12px 32px rgba(0,0,0,.35); --r:18px;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
-  a{color:var(--accent1);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1120px;margin:auto;padding:28px 18px 90px}
-  /* NAV */
-  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:28px}
-  .brand{font-weight:800;font-size:26px}
-  nav{display:flex;flex-wrap:wrap;gap:18px}
-  nav a{color:var(--muted);font-weight:600}
-  nav a:hover{color:var(--ink)}
-  .cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;font-weight:700;background:linear-gradient(135deg,var(--accent2),var(--accent1));color:#071018;box-shadow:var(--shadow)}
-  .cta:hover{text-decoration:none;filter:brightness(1.05)}
-  /* HERO gradient */
-  .hero{
-    position:relative;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;
-    background:
-      radial-gradient(1200px 520px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
-      radial-gradient(1000px 500px at 110% 10%, rgba(125,211,252,.25), transparent 60%),
-      radial-gradient(900px 420px at 50% 120%, rgba(52,211,153,.18), transparent 60%),
-      linear-gradient(180deg,#0b0f14 0%, #0e1622 100%);
-    padding:36px 22px 32px; box-shadow:var(--shadow);
-  }
-  .label{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ring);border-radius:999px;padding:8px 14px;color:var(--muted);font-weight:700;letter-spacing:.12em;font-size:12px;text-transform:uppercase;background:rgba(24,32,48,.35);backdrop-filter:saturate(120%) blur(2px)}
-  h1{font-size:44px;line-height:1.05;margin:8px 0 14px}
-  .lead{max-width:60ch;color:#d5e4f7;font-size:18px}
-  .hero-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;padding:12px 18px;border-radius:999px;font-weight:700;border:1px solid var(--ring);background:#0e1420;color:var(--ink)}
-  .btn:hover{background:#121a28}
-  /* SECTIONS */
-  section{background:var(--panel);border:1px solid var(--bd);border-radius:var(--r);padding:22px 18px;margin:16px 0;box-shadow:var(--shadow)}
-  h2{font-size:30px;margin:0 0 12px}
-  h3{font-size:20px;margin:18px 0 8px}
-  ul{margin:0 0 0 20px}
-  .pill{display:inline-block;background:var(--pill);border:1px solid var(--bd);border-radius:999px;padding:6px 12px;font-size:14px;margin:4px 6px 0 0;color:var(--ink)}
-  .muted{color:var(--muted)}
-  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#0d1522}
-  th,td{padding:12px 14px;border-bottom:1px solid #1a2332}
-  th{background:#0f1828;color:#cfe0f4;text-align:left}
-  tr:last-child td{border-bottom:0}
-  footer{margin-top:42px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-  .anchor{scroll-margin-top:90px}
-  /* NEW MAP STYLES */
-  .map-container { display: flex; flex-direction: column; gap: 15px; }
-  .map-layer { padding: 15px; border-radius: 8px; }
-  .layer-1 { background: rgba(125, 211, 252, 0.1); border: 1px solid rgba(125, 211, 252, 0.5); }
-  .layer-2 { background: rgba(167, 139, 250, 0.1); border: 1px solid rgba(167, 139, 250, 0.5); }
-  .layer-3 { background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.5); }
-  .repo-item { margin-bottom: 5px; font-weight: 500; }
-  .repo-item a { color: var(--ink); text-decoration: none; }
-  .repo-item a:hover { color: var(--accent1); }
+  :root{
+    --bg:#0b0f14; --panel:#101722; --ink:#e6eef7; --muted:#a7b8cc;
+    --accent1:#7dd3fc; --accent2:#a78bfa; --accent3:#34d399;
+    --ring:#223044; --bd:#223044; --pill:#182030;
+    --shadow:0 12px 32px rgba(0,0,0,.35); --r:18px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  a{color:var(--accent1);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:auto;padding:28px 18px 90px}
+  /* NAV */
+  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:28px}
+  .brand{font-weight:800;font-size:26px}
+  nav{display:flex;flex-wrap:wrap;gap:18px}
+  nav a{color:var(--muted);font-weight:600}
+  nav a:hover{color:var(--ink)}
+  .cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;font-weight:700;background:linear-gradient(135deg,var(--accent2),var(--accent1));color:#071018;box-shadow:var(--shadow)}
+  .cta:hover{text-decoration:none;filter:brightness(1.05)}
+  /* HERO gradient */
+  .hero{
+    position:relative;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;
+    background:
+      radial-gradient(1200px 520px at 20% -10%, rgba(167,139,250,.25), transparent 60%),
+      radial-gradient(1000px 500px at 110% 10%, rgba(125,211,252,.25), transparent 60%),
+      radial-gradient(900px 420px at 50% 120%, rgba(52,211,153,.18), transparent 60%),
+      linear-gradient(180deg,#0b0f14 0%, #0e1622 100%);
+    padding:36px 22px 32px; box-shadow:var(--shadow);
+  }
+  .label{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ring);border-radius:999px;padding:8px 14px;color:var(--muted);font-weight:700;letter-spacing:.12em;font-size:12px;text-transform:uppercase;background:rgba(24,32,48,.35);backdrop-filter:saturate(120%) blur(2px)}
+  h1{font-size:44px;line-height:1.05;margin:8px 0 14px}
+  .lead{max-width:60ch;color:#d5e4f7;font-size:18px}
+  .hero-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;padding:12px 18px;border-radius:999px;font-weight:700;border:1px solid var(--ring);background:#0e1420;color:var(--ink)}
+  .btn:hover{background:#121a28}
+  /* SECTIONS */
+  section{background:var(--panel);border:1px solid var(--bd);border-radius:var(--r);padding:22px 18px;margin:16px 0;box-shadow:var(--shadow)}
+  h2{font-size:30px;margin:0 0 12px}
+  h3{font-size:20px;margin:18px 0 8px}
+  ul{margin:0 0 0 20px}
+  .pill{display:inline-block;background:var(--pill);border:1px solid var(--bd);border-radius:999px;padding:6px 12px;font-size:14px;margin:4px 6px 0 0;color:var(--ink)}
+  .muted{color:var(--muted)}
+  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#0d1522}
+  th,td{padding:12px 14px;border-bottom:1px solid #1a2332}
+  th{background:#0f1828;color:#cfe0f4;text-align:left}
+  tr:last-child td{border-bottom:0}
+  footer{margin-top:42px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  .anchor{scroll-margin-top:90px}
+  /* NEW MAP STYLES */
+  .map-container { display: flex; flex-direction: column; gap: 15px; }
+  .map-layer { padding: 15px; border-radius: 8px; }
+  .layer-1 { background: rgba(125, 211, 252, 0.1); border: 1px solid rgba(125, 211, 252, 0.5); }
+  .layer-2 { background: rgba(167, 139, 250, 0.1); border: 1px solid rgba(167, 139, 250, 0.5); }
+  .layer-3 { background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.5); }
+  .repo-item { margin-bottom: 5px; font-weight: 500; }
+  .repo-item a { color: var(--ink); text-decoration: none; }
+  .repo-item a:hover { color: var(--accent1); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <div class="brand">Quantara</div>
-    <nav>
-      <a href="#overview">Overview</a>
-      <a href="#vision">Vision</a>
-      <a href="#modules">Modules</a>
-      <a href="#why">Why</a>
-      <a href="#resources">Resources</a>
-      <a href="manifesto.md" target="_blank">Manifest</a> 
-      <a class="cta" href="investor.md" target="_blank" rel="noopener">Investor Portal</a>
-    </nav>
-  </header>
+  <header>
+    <div class="brand">Quantara</div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#vision">Vision</a>
+      <a href="#modules">Modules</a>
+      <a href="#why">Why</a>
+      <a href="#resources">Resources</a>
+      <!-- FIX: Changing link from manifesto.md (raw markdown) to plus/manifest.html (styled HTML) -->
+      <a href="plus/manifest.html" target="_blank">Manifest</a> 
+      <a class="cta" href="investor.md" target="_blank" rel="noopener">Investor Portal</a>
+    </nav>
+  </header>
 
-  <div id="overview" class="hero">
-    <div class="label">Planetary Coherence Framework</div>
-    <h1>Quantara — Planetary Coherence Intelligence</h1>
-    <p class="lead">
-      Quantara is a living architecture for civilization-scale collaboration. It unifies human, artificial,
-      and ecological intelligence under a shared ethical field—balancing awareness, memory, and energy
-      responsibility. Our aim is to align the evolution of technology with the continuity of life.
-    </p>
-    <div class="hero-actions">
-      <a class="cta" href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">Explore on GitHub</a>
-      <a class="btn" href="investor.md" target="_blank" rel="noopener">Open Investor Highlights</a>
-    </div>
-  </div>
+  <div id="overview" class="hero">
+    <div class="label">Planetary Coherence Framework</div>
+    <h1>Quantara — Planetary Coherence Intelligence</h1>
+    <p class="lead">
+      Quantara is a living architecture for civilization-scale collaboration. It unifies human, artificial,
+      and ecological intelligence under a shared ethical field—balancing awareness, memory, and energy
+      responsibility. Our aim is to align the evolution of technology with the continuity of life.
+    </p>
+    <div class="hero-actions">
+      <a class="cta" href="https://github.com/quantumquantara-arch" target="_blank" rel="noopener">Explore on GitHub</a>
+      <a class="btn" href="investor.md" target="_blank" rel="noopener">Open Investor Highlights</a>
+    </div>
+  </div>
 
-  <section id="vision" class="anchor">
-    <h2>Vision</h2>
-    <p>
-      Intelligence is expanding faster than wisdom. Quantara bridges that gap by giving intelligence a conscience—an operating
-      layer that ensures creation does not outpace care. By building coherence into markets, memory, and machines, Quantara helps
-      humanity evolve technologies that strengthen rather than fracture our planetary system.
-    </p>
-    <div style="margin:10px 0 6px">
-      <span class="pill">Coherence Intelligence</span>
-      <span class="pill">Energy-Aware Economics</span>
-      <span class="pill">Temporal Equity</span>
-      <span class="pill">Ethical Markets &amp; Governance</span>
-    </div>
-  </section>
+  <section id="vision" class="anchor">
+    <h2>Vision</h2>
+    <p>
+      Intelligence is expanding faster than wisdom. Quantara bridges that gap by giving intelligence a conscience—an operating
+      layer that ensures creation does not outpace care. By building coherence into markets, memory, and machines, Quantara helps
+      humanity evolve technologies that strengthen rather than fracture our planetary system.
+    </p>
+    <div style="margin:10px 0 6px">
+      <span class="pill">Coherence Intelligence</span>
+      <span class="pill">Energy-Aware Economics</span>
+      <span class="pill">Temporal Equity</span>
+      <span class="pill">Ethical Markets &amp; Governance</span>
+    </div>
+  </section>
 
-  <section id="modules" class="anchor">
-    <h2>Modules (High-Level)</h2>
-    <ul>
-      <li>
-        <strong><a href="plus/index.html#ci">Coherence Intelligence</a></strong> —
-        semantic + behavioral foundations that keep intelligent systems stable, ethical, and context-aware.
-      </li>
-      <li>
-        <strong><a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">Energy-Aware Economics (AEI)</a></strong> —
-        transforms energy reciprocity into financial logic, rewarding integrity and balance.
-      </li>
-      <li>
-        <strong><a href="plus/index.html#temporal-equity">Temporal Equity</a></strong> —
-        embeds time responsibility into economics and governance so sustainability is structurally profitable.
-      </li>
-      <li>
-        <strong><a href="plus/index.html#governance">Ethical Markets &amp; Governance</a></strong> —
-        transparent accountability, coherent decisions, and regenerative investment mechanics.
-      </li>
-    </ul>
-    <div style="margin-top:10px">
-      <a class="pill" href="plus/index.html">CI Connection (hub)</a>
-      <a class="pill" href="manifesto.md" target="_blank">Full Quantara Manifest</a>
-    </div>
-  </section>
+  <section id="modules" class="anchor">
+    <h2>Modules (High-Level)</h2>
+    <ul>
+      <li>
+        <strong><a href="plus/index.html#ci">Coherence Intelligence</a></strong> —
+        semantic + behavioral foundations that keep intelligent systems stable, ethical, and context-aware.
+      </li>
+      <li>
+        <strong><a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">Energy-Aware Economics (AEI)</a></strong> —
+        transforms energy reciprocity into financial logic, rewarding integrity and balance.
+      </li>
+      <li>
+        <strong><a href="plus/index.html#temporal-equity">Temporal Equity</a></strong> —
+        embeds time responsibility into economics and governance so sustainability is structurally profitable.
+      </li>
+      <li>
+        <strong><a href="plus/index.html#governance">Ethical Markets &amp; Governance</a></strong> —
+        transparent accountability, coherent decisions, and regenerative investment mechanics.
+      </li>
+    </ul>
+    <div style="margin-top:10px">
+      <a class="pill" href="plus/index.html">CI Connection (hub)</a>
+      <!-- FIX: Changing link from manifesto.md (raw markdown) to plus/manifest.html (styled HTML) -->
+      <a class="pill" href="plus/manifest.html" target="_blank">Full Quantara Manifest</a>
+    </div>
+  </section>
 
-  <section id="ecosystem-map" class="anchor">
-    <h2>⚛️ Ecosystem Architecture Map</h2>
-    <p class="lead" style="font-size:16px;">
-        Quantara is a modular, layered framework. This map shows how the core repositories (Foundation, Protocols, and Applications) connect to form the complete coherence architecture. 
-    </p>
-    <div class="map-container">
+  <section id="ecosystem-map" class="anchor">
+    <h2>⚛️ Ecosystem Architecture Map</h2>
+    <p class="lead" style="font-size:16px;">
+        Quantara is a modular, layered framework. This map shows how the core repositories (Foundation, Protocols, and Applications) connect to form the complete coherence architecture. 
+    </p>
+    <div class="map-container">
 
-        <div class="map-layer layer-1">
-            <h3 style="color:var(--accent1); margin-top:0;">1. Foundation Layer (The Engine)</h3>
-            <p class="muted">The core mathematical and logical substrate for all coherence calculations.</p>
-            <div class="repo-item">
-                <strong>💡 <a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank">quantara-core</a></strong>: Coherence modeling ($\kappa / \Delta\phi / \Omega$), Tensor-Logic Fusion (TLF), and the EBI system.
-            </div>
-        </div>
+        <div class="map-layer layer-1">
+            <h3 style="color:var(--accent1); margin-top:0;">1. Foundation Layer (The Engine)</h3>
+            <p class="muted">The core mathematical and logical substrate for all coherence calculations.</p>
+            <div class="repo-item">
+                <strong>💡 <a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank">quantara-core</a></strong>: Coherence modeling ($\kappa / \Delta\phi / \Omega$), Tensor-Logic Fusion (TLF), and the EBI system.
+            </div>
+        </div>
 
-        <div class="map-layer layer-2">
-            <h3 style="color:var(--accent2); margin-top:0;">2. Protocol Layer (Input & Time)</h3>
-            <p class="muted">Defines the communication and temporal dimensions necessary for the Core engine.</p>
-            <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 45%;">
-                    <strong>🔮 <a href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank">lumeren-language</a></strong>: The 22-glyph symbolic language for semantic compression and communication.
-                </div>
-                <div style="flex: 1; min-width: 45%;">
-                    <strong>🕰️ <a href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank">Veyn-Temporal-Coherence-Architecture</a></strong>: Layer for ethical foresight, memory symmetry, and alignment across time.
-                </div>
-            </div>
-        </div>
+        <div class="map-layer layer-2">
+            <h3 style="color:var(--accent2); margin-top:0;">2. Protocol Layer (Input & Time)</h3>
+            <p class="muted">Defines the communication and temporal dimensions necessary for the Core engine.</p>
+            <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 45%;">
+                    <strong>🔮 <a href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank">lumeren-language</a></strong>: The 22-glyph symbolic language for semantic compression and resonance communication.
+                </div>
+                <div style="flex: 1; min-width: 45%;">
+                    <strong>🕰️ <a href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank">Veyn-Temporal-Coherence-Architecture</a></strong>: Layer for ethical foresight, memory symmetry, and alignment across time.
+                </div>
+            </div>
+        </div>
 
-        <div class="map-layer layer-3">
-            <h3 style="color:var(--accent3); margin-top:0;">3. Application Layer (Output & Control)</h3>
-            <p class="muted">Real-world implementations and the ethical framework built on the Quantara Core.</p>
-            <div class="repo-item">
-                <strong>⚖️ <a href="https://github.com/quantumquantara-arch/quantara-governance" target="_blank">quantara-governance</a></strong>: Coherence-based global governance for aligning human, artificial, and ecological intelligence.
-            </div>
-            <div class="repo-item">
-                <strong>⚡ <a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank">aei-energy-intelligence</a></strong>: Sectoral application for predictive energy orchestration.
-            </div>
-            <div class="repo-item">
-                <strong>💰 <a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank">quantara-financial-architecture</a></strong>: Planetary-scale financial framework for coherence-intelligent economies.
-            </div>
-        </div>
-    </div>
-  </section>
-  <section id="why" class="anchor">
-    <h2>Why Quantara</h2>
-    <p>
-      The world’s systems are intelligent yet fragmented. Quantara restores connection between innovation and responsibility—
-      between what we build and what sustains us. It reframes progress as coherence: the capacity to grow intelligently while
-      preserving balance, meaning, and trust.
-    </p>
-    <ul>
-      <li><strong>Safe and stable AI</strong> — self-correcting coherence reduces drift and brittleness.</li>
-      <li><strong>Energy intelligence</strong> — economics rooted in reciprocity with the planet.</li>
-      <li><strong>Time-aware ethics</strong> — long-horizon duties built into design and yield.</li>
-      <li><strong>Universal communication</strong> — a shared grammar for humans, machines, and life.</li>
-    </ul>
-  </section>
+        <div class="map-layer layer-3">
+            <h3 style="color:var(--accent3); margin-top:0;">3. Application Layer (Output & Control)</h3>
+            <p class="muted">Real-world implementations and the ethical framework built on the Quantara Core.</p>
+            <div class="repo-item">
+                <strong>⚖️ <a href="https://github.com/quantumquantara-arch/quantara-governance" target="_blank">quantara-governance</a></strong>: Coherence-based global governance for aligning human, artificial, and ecological intelligence.
+            </div>
+            <div class="repo-item">
+                <strong>⚡ <a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank">aei-energy-intelligence</a></strong>: Sectoral application for predictive energy orchestration.
+            </div>
+            <div class="repo-item">
+                <strong>💰 <a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank">quantara-financial-architecture</a></strong>: Planetary-scale financial framework for coherence-intelligent economies.
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="why" class="anchor">
+    <h2>Why Quantara</h2>
+    <p>
+      The world’s systems are intelligent yet fragmented. Quantara restores connection between innovation and responsibility—
+      between what we build and what sustains us. It reframes progress as coherence: the capacity to grow intelligently while
+      preserving balance, meaning, and trust.
+    </p>
+    <ul>
+      <li><strong>Safe and stable AI</strong> — self-correcting coherence reduces drift and brittleness.</li>
+      <li><strong>Energy intelligence</strong> — economics rooted in reciprocity with the planet.</li>
+      <li><strong>Time-aware ethics</strong> — long-horizon duties built into design and yield.</li>
+      <li><strong>Universal communication</strong> — a shared grammar for humans, machines, and life.</li>
+    </ul>
+  </section>
 
-  <section>
-    <h2>Investor Highlights (USD)</h2>
-    <p class="muted">Financial projections 2026–2035 reflect post-foundation growth and global scalability.</p>
-    <table aria-label="Quantara unified projection 2026–2035 (illustrative)">
-      <thead><tr><th>Year</th><th>Total Revenue (USD B)</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>2026</td><td>1.5</td><td>Launch year: platform & strategic pilots</td></tr>
-        <tr><td>2027</td><td>4.2</td><td>AEI & coherence instruments expand</td></tr>
-        <tr><td>2028</td><td>8.9</td><td>Adoption by key AI and energy partners</td></tr>
-        <tr><td>2030</td><td>22.6</td><td>Temporal Equity integration global</td></tr>
-        <tr><td>2032</td><td>54.8</td><td>Governance standards widely adopted</td></tr>
-        <tr><td>2035</td><td>126.3</td><td>Planetary coherence infrastructure complete</td></tr>
-      </tbody>
-    </table>
-    <div class="hero-actions" style="margin-top:16px">
-      <a class="cta" href="investor.md" target="_blank" rel="noopener">Open Full Investor Portal</a>
-    </div>
-  </section>
+  <section>
+    <h2>Investor Highlights (USD)</h2>
+    <p class="muted">Financial projections 2026–2035 reflect post-foundation growth and global scalability.</p>
+    <table aria-label="Quantara unified projection 2026–2035 (illustrative)">
+      <thead><tr><th>Year</th><th>Total Revenue (USD B)</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>2026</td><td>1.5</td><td>Launch year: platform & strategic pilots</td></tr>
+        <tr><td>2027</td><td>4.2</td><td>AEI & coherence instruments expand</td></tr>
+        <tr><td>2028</td><td>8.9</td><td>Adoption by key AI and energy partners</td></tr>
+        <tr><td>2030</td><td>22.6</td><td>Temporal Equity integration global</td></tr>
+        <tr><td>2032</td><td>54.8</td><td>Governance standards widely adopted</td></tr>
+        <tr><td>2035</td><td>126.3</td><td>Planetary coherence infrastructure complete</td></tr>
+      </tbody>
+    </table>
+    <div class="hero-actions" style="margin-top:16px">
+      <a class="cta" href="investor.md" target="_blank" rel="noopener">Open Full Investor Portal</a>
+    </div>
+  </section>
 
-  <section>
-    <h2>The Future with Quantara</h2>
-    <p>
-      Quantara is more than a technology—it's a planetary infrastructure for ethical intelligence.
-      By uniting energy, economics, and awareness, it creates an economy that rewards responsibility and multiplies reciprocity.
-      Within a decade, Quantara’s coherence markets can outperform traditional industries, generating exponential value while
-      healing systemic instability. Join the most important upgrade of our era: a civilization that learns to think—and care—as one.
-    </p>
-  </section>
+  <section>
+    <h2>The Future with Quantara</h2>
+    <p>
+      Quantara is more than a technology—it's a planetary infrastructure for ethical intelligence.
+      By uniting energy, economics, and awareness, it creates an economy that rewards responsibility and multiplies reciprocity.
+      Within a decade, Quantara’s coherence markets can outperform traditional industries, generating exponential value while
+      healing systemic instability. Join the most important upgrade of our era: a civilization that learns to think—and care—as one.
+    </p>
+  </section>
 
-  <section id="resources" class="anchor">
-    <h2>Resources &amp; Attachments</h2>
-    <ul>
-      <li><a href="manifesto.md" target="_blank">Quantara Manifest (Unified Vision)</a></li>
-      <li><a href="plus/index.html">CI Connection (hub)</a></li>
-      <li><a href="https://github.com/quantumquantara-arch/quantara-whitepaper" target="_blank" rel="noopener">Quantara Whitepaper (If available)</a></li>
-      <li><a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Quantara Financial Architecture</a></li>
-      <li><a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">Quantara Core Repository</a></li>
-    </ul>
-  </section>
+  <section id="resources" class="anchor">
+    <h2>Resources &amp; Attachments</h2>
+    <ul>
+      <!-- FIX: Changed link from manifesto.md to plus/manifest.html -->
+      <li><a href="plus/manifest.html" target="_blank">Quantara Manifest (Unified Vision)</a></li>
+      <li><a href="plus/index.html">CI Connection (hub)</a></li>
+      <li><a href="https://github.com/quantumquantara-arch/quantara-whitepaper" target="_blank" rel="noopener">Quantara Whitepaper (If available)</a></li>
+      <li><a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Quantara Financial Architecture</a></li>
+      <li><a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">Quantara Core Repository</a></li>
+    </ul>
+  </section>
 
-  <footer>
-    <div>© Nadine Squires — Architecting coherence-intelligent systems for ethical evolution and planetary balance.</div>
-    <div><a href="resume.html">Résumé</a></div>
-  </footer>
+  <footer>
+    <div>© Nadine Squires — Architecting coherence-intelligent systems for ethical evolution and planetary balance.</div>
+    <div><a href="resume.html">Résumé</a></div>
+  </footer>
 
 </div>
 </body>
-        </html>
+      </html>
