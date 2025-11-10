@@ -54,12 +54,20 @@
   tr:last-child td{border-bottom:0}
   footer{margin-top:42px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .anchor{scroll-margin-top:90px}
+  /* NEW MAP STYLES */
+  .map-container { display: flex; flex-direction: column; gap: 15px; }
+  .map-layer { padding: 15px; border-radius: 8px; }
+  .layer-1 { background: rgba(125, 211, 252, 0.1); border: 1px solid rgba(125, 211, 252, 0.5); }
+  .layer-2 { background: rgba(167, 139, 250, 0.1); border: 1px solid rgba(167, 139, 250, 0.5); }
+  .layer-3 { background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.5); }
+  .repo-item { margin-bottom: 5px; font-weight: 500; }
+  .repo-item a { color: var(--ink); text-decoration: none; }
+  .repo-item a:hover { color: var(--accent1); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- NAV -->
   <header>
     <div class="brand">Quantara</div>
     <nav>
@@ -68,11 +76,11 @@
       <a href="#modules">Modules</a>
       <a href="#why">Why</a>
       <a href="#resources">Resources</a>
+      <a href="manifesto.md" target="_blank">Manifest</a> 
       <a class="cta" href="investor.md" target="_blank" rel="noopener">Investor Portal</a>
     </nav>
   </header>
 
-  <!-- HERO -->
   <div id="overview" class="hero">
     <div class="label">Planetary Coherence Framework</div>
     <h1>Quantara — Planetary Coherence Intelligence</h1>
@@ -87,7 +95,6 @@
     </div>
   </div>
 
-  <!-- VISION -->
   <section id="vision" class="anchor">
     <h2>Vision</h2>
     <p>
@@ -103,9 +110,8 @@
     </div>
   </section>
 
-  <!-- MODULES -->
   <section id="modules" class="anchor">
-    <h2>Modules</h2>
+    <h2>Modules (High-Level)</h2>
     <ul>
       <li>
         <strong><a href="plus/index.html#ci">Coherence Intelligence</a></strong> —
@@ -126,10 +132,53 @@
     </ul>
     <div style="margin-top:10px">
       <a class="pill" href="plus/index.html">CI Connection (hub)</a>
+      <a class="pill" href="manifesto.md" target="_blank">Full Quantara Manifest</a>
     </div>
   </section>
 
-  <!-- WHY QUANTARA -->
+  <section id="ecosystem-map" class="anchor">
+    <h2>⚛️ Ecosystem Architecture Map</h2>
+    <p class="lead" style="font-size:16px;">
+        Quantara is a modular, layered framework. This map shows how the core repositories (Foundation, Protocols, and Applications) connect to form the complete coherence architecture. 
+    </p>
+    <div class="map-container">
+
+        <div class="map-layer layer-1">
+            <h3 style="color:var(--accent1); margin-top:0;">1. Foundation Layer (The Engine)</h3>
+            <p class="muted">The core mathematical and logical substrate for all coherence calculations.</p>
+            <div class="repo-item">
+                <strong>💡 <a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank">quantara-core</a></strong>: Coherence modeling ($\kappa / \Delta\phi / \Omega$), Tensor-Logic Fusion (TLF), and the EBI system.
+            </div>
+        </div>
+
+        <div class="map-layer layer-2">
+            <h3 style="color:var(--accent2); margin-top:0;">2. Protocol Layer (Input & Time)</h3>
+            <p class="muted">Defines the communication and temporal dimensions necessary for the Core engine.</p>
+            <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 45%;">
+                    <strong>🔮 <a href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank">lumeren-language</a></strong>: The 22-glyph symbolic language for semantic compression and communication.
+                </div>
+                <div style="flex: 1; min-width: 45%;">
+                    <strong>🕰️ <a href="https://github.com/quantumquantara-arch/Veyn-Temporal-Coherence-Architecture" target="_blank">Veyn-Temporal-Coherence-Architecture</a></strong>: Layer for ethical foresight, memory symmetry, and alignment across time.
+                </div>
+            </div>
+        </div>
+
+        <div class="map-layer layer-3">
+            <h3 style="color:var(--accent3); margin-top:0;">3. Application Layer (Output & Control)</h3>
+            <p class="muted">Real-world implementations and the ethical framework built on the Quantara Core.</p>
+            <div class="repo-item">
+                <strong>⚖️ <a href="https://github.com/quantumquantara-arch/quantara-governance" target="_blank">quantara-governance</a></strong>: Coherence-based global governance for aligning human, artificial, and ecological intelligence.
+            </div>
+            <div class="repo-item">
+                <strong>⚡ <a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank">aei-energy-intelligence</a></strong>: Sectoral application for predictive energy orchestration.
+            </div>
+            <div class="repo-item">
+                <strong>💰 <a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank">quantara-financial-architecture</a></strong>: Planetary-scale financial framework for coherence-intelligent economies.
+            </div>
+        </div>
+    </div>
+  </section>
   <section id="why" class="anchor">
     <h2>Why Quantara</h2>
     <p>
@@ -145,7 +194,6 @@
     </ul>
   </section>
 
-  <!-- INVESTOR HIGHLIGHTS -->
   <section>
     <h2>Investor Highlights (USD)</h2>
     <p class="muted">Financial projections 2026–2035 reflect post-foundation growth and global scalability.</p>
@@ -165,7 +213,6 @@
     </div>
   </section>
 
-  <!-- GLOBAL IMPACT -->
   <section>
     <h2>The Future with Quantara</h2>
     <p>
@@ -176,20 +223,17 @@
     </p>
   </section>
 
-  <!-- RESOURCES -->
   <section id="resources" class="anchor">
     <h2>Resources &amp; Attachments</h2>
     <ul>
+      <li><a href="manifesto.md" target="_blank">Quantara Manifest (Unified Vision)</a></li>
       <li><a href="plus/index.html">CI Connection (hub)</a></li>
+      <li><a href="https://github.com/quantumquantara-arch/quantara-whitepaper" target="_blank" rel="noopener">Quantara Whitepaper (If available)</a></li>
       <li><a href="https://github.com/quantumquantara-arch/quantara-financial-architecture" target="_blank" rel="noopener">Quantara Financial Architecture</a></li>
-      <li><a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">Quantara Core</a></li>
-      <li><a href="https://github.com/quantumquantara-arch/lumeren-language" target="_blank" rel="noopener">Luméren Language</a></li>
-      <li><a href="https://github.com/quantumquantara-arch/aei-energy-intelligence" target="_blank" rel="noopener">AEI Energy Intelligence</a></li>
-      <li><a href="plus/index.html#governance">Quantara Governance</a></li>
+      <li><a href="https://github.com/quantumquantara-arch/quantara-core" target="_blank" rel="noopener">Quantara Core Repository</a></li>
     </ul>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div>© Nadine Squires — Architecting coherence-intelligent systems for ethical evolution and planetary balance.</div>
     <div><a href="resume.html">Résumé</a></div>
@@ -197,4 +241,4 @@
 
 </div>
 </body>
-  </html>
+        </html>
